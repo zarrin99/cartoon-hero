@@ -1,0 +1,72 @@
+html{
+        font-family: 'Parastoo', 'Times New Roman', Times, serif;
+}
+
+.background{
+    /*background:#b1dff3;*/
+    background-color: rgb(216, 216, 216, 0.7);
+
+}
+
+header{
+    text-align: center;
+    display:flex; 
+    flex-direction: column;
+}
+
+header h1{
+    margin:0;
+    padding:15px;
+}
+
+li{
+    list-style: none;
+    padding:10px; 
+}
+
+ul{
+    padding:0;
+}
+
+.journey-images{
+    background: url(images/images/background.jpg) no-repeat center center fixed;
+    min-height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.journey-text{
+    text-align: center;
+    font-size: 2em;
+    padding: 1.5em;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+@media(min-width: 1000px){
+    body{
+        max-width: 1600px;
+        margin:0 auto;
+        }
+        header{
+            flex-direction: row;
+        }
+        header li{
+            display: inline-block;    
+        }
+        header h1, header nav{
+            flex: 1; /*make sure h1 and nav take equal amount of space*/
+        }
+        header h1{
+            text-align: left;
+        }
+        header nav{
+            text-align: right;
+        }
+}
