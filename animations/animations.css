@@ -1,0 +1,49 @@
+/*following tutorial: https://www.youtube.com/watch?v=YszONjKpgg4 */
+.parent{
+    background-color: aquamarine;
+    height: 400px;
+    width: 400px;
+}
+
+.child{
+    background-color: rgb(68, 140, 140);
+    height: 50%;
+    width: 50%;
+    /*animation: left-to-right 1s ease-in forwards 3 alternate ; -> we can place this here, that way it would constantly be animated*/
+    /*
+    timing functions:
+    linear -> even spacing between the beginning and end of our transition
+    ease-in-out -> start out slow, end slow, fast in the middle
+    we can also use the browser: custom cubic bezier
+    like this cubic-bezier(.42,0,.35,1.86)
+    */
+
+    /*transition: 1s  --> if we had written this, both the background colour and translateX would have changed over 1s*/
+}
+.parent:hover .child{
+    /*transform: translateX(100%);*/
+    /*background-color: aqua; happens instantly cause transition doesn't happen*/
+
+    /*you write animation where you want it to happen, in our casr hover*/
+    animation: left-to-right 1s ease-in forwards 3 alternate ; /*alternate says when i get to the end of the animation for the next iteration go backwards*/
+
+    /*animation-play-state: paused* -> this will pause the animation when we hover*/
+    
+}
+
+@keyframes left-to-right{
+    0% {
+        transform: translateX(0);
+    }
+
+    33%{
+        transform: translateY(100%);
+    }
+
+    66% {
+        transform: translateX(100%) translateY(100%); /*bottom-right corner*/
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
